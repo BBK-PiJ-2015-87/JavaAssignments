@@ -1,15 +1,13 @@
 package day1;
-
 /**
  * Naive sorting
  */
 public class Task7 {
     public static void main(String[] args) {
-        int[] array = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-        sort(array);
-
 
         //TEST
+        int[] array = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+        sort(array);
         for (int i : array) {
             System.out.println(i);
         }
