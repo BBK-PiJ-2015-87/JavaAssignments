@@ -8,7 +8,6 @@ public class ArrayCopier {
 
     public ArrayCopier(int length) {
         destination = new int[length];
-        setElementsToZero();
     }
 
     public int[] copy(int[] source) {
@@ -18,11 +17,4 @@ public class ArrayCopier {
         }
         return destination;
     }
-
-    private void setElementsToZero() {
-        for (int i = 0; i < destination.length; i++) {
-            destination[i] = 0;
-        }
-    }
-
 }
