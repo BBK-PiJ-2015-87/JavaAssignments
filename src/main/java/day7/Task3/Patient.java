@@ -16,6 +16,14 @@ public class Patient {
         this.nextPatient = null;
     }
 
+    public void addPatient(Patient next) {
+        if (this.nextPatient == null) {
+            nextPatient = next;
+        } else {
+            this.nextPatient.addPatient(next);
+        }
+    }
+
     public void setName(String name) {
         this.name = name;
     }
