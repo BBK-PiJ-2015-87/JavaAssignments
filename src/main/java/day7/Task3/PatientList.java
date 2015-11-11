@@ -4,26 +4,41 @@ package day7.Task3;
  * Created by Workstation on 24/10/2015.
  */
 public class PatientList {
-    public Patient headPatient = null;
-    public Patient tailPatient = null;
-    private int size = 0;
 
-    public void add(Patient newPatient) {
-        if (isEmpty()) {
-            headPatient = newPatient;
-            tailPatient = headPatient;
-        } else {
-            headPatient.addPatient(newPatient);
-            tailPatient = newPatient;
+    private Node head = null;
+    private Node tail = null;
+
+    class Node{
+        private Patient patient;
+        public Node nextNode;
+
+        public Node(Patient patient, Node node) {
+            this.patient = patient;
+            nextNode = node;
         }
-        size ++;
+
+        public Patient getPatient() {
+            return patient;
+        }
+
+        public void setPatient(Patient patient) {
+            this.patient = patient;
+        }
+
+        public Node getNextNode() {
+            return nextNode;
+        }
+
+        public void setNextNode(Node node) {
+            nextNode = node;
+        }
+
+
+
     }
 
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public int getSize() {
-        return size;
-    }
 }
+
+
+
+
