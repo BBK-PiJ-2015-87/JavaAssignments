@@ -18,4 +18,11 @@ public interface PersonQueue {
      * @return a person from the queue
      */
     Person retrieve();
+
+    /**
+     * Gets size of the queue.
+     *
+     * @return size of the queue
+     */
+    int getSize();
 }
