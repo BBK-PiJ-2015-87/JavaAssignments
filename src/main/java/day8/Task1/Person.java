@@ -9,12 +9,13 @@ public class Person {
     private String name;
     private String age;
     private int id;
+    private Person next;
 
-
-    public Person(String name, String age, int id) {
+    public Person(String name, String age, int id, Person next) {
         this.name = name;
         this.age = age;
         this.id = id;
+        this.next = next;
     }
 
     public String getName() {
@@ -39,5 +40,13 @@ public class Person {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Person getNext() {
+        return next;
+    }
+
+    public void setNext(Person next) {
+        this.next = next;
     }
 }
