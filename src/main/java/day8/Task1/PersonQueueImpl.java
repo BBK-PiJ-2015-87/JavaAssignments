@@ -9,20 +9,15 @@ public class PersonQueueImpl implements PersonQueue {
 
     private int size = 0;
     private Person first; //first element of the queue.
-    private Person last; //last element of the queue.
 
     public void insert(Person person) {
-        if (isEmpty()) {
-            last = person;
-        } else {
-            person.setNext(first);
-        }
+        person.setNext(first);
         first = person;
     }
 
     public Person retrieve() {
 
-        return last;
+        return null;
     }
 
     public int getSize() {
