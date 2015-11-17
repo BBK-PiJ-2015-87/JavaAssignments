@@ -132,6 +132,12 @@ public class IntegerTreeNode {
         }
     }
 
+    /**
+     * Prints elements in depth-first pre-order sequence.
+     * 1. Traverse left subtree by recursively calling pre-order function
+     * 2. Traverse right subtree by recursively calling pre-order function
+     * 3. Print root element
+     */
     public void printPostOrder() {
         if (this.left != null) {
             this.left.printPostOrder();
