@@ -7,6 +7,7 @@ public class IntegerTreeNode {
     private int value;
     private IntegerTreeNode left;
     private IntegerTreeNode right;
+    private static final StringBuilder line = new StringBuilder();
 
     public IntegerTreeNode(int value) {
         this.value = value;
@@ -83,18 +84,6 @@ public class IntegerTreeNode {
         }
     }
 
-    @Override
-    public String toString() {
-        StringBuilder result = new StringBuilder("[" + this.value);
-        if (this.left != null) {
-            result.append("L" + left.value);
-        }
-        if (this.right != null) {
-            result.append("[R]");
-        }
-
-        return result.toString();
-    }
 
     /**
      * Prints elements in depth-first pre-order sequence.
@@ -148,5 +137,23 @@ public class IntegerTreeNode {
         }
 
         System.out.print(this.value + ",");
+    }
+
+
+    public String toStringPrint() {
+        line.append(this.value);
+
+        if (this.left != null) {
+            line.append("[");
+            line.append("L");
+            this.left.toStringPrint();
+        }
+        if (this.right != null) {
+            line.append("R");
+            this.right.toStringPrint();
+            line.append("]");
+        }
+
+        return line.toString();
     }
 }

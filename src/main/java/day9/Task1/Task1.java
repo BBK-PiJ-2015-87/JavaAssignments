@@ -19,10 +19,12 @@ public class Task1 {
 //        System.out.println(root.getMax());
 //        System.out.println(root.getMin());
 
-        root.printInOrder();
-        System.out.println("");
-        root.printPreOrder();
-        System.out.println("");
-        root.printPostOrder();
+//        root.printInOrder();
+//        System.out.println("");
+//        root.printPreOrder();
+//        System.out.println("");
+//        root.printPostOrder();
+        System.out.println(root.toStringPrint());
+
     }
 }
