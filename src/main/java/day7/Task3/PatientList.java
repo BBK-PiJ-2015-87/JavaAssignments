@@ -17,6 +17,10 @@ public class PatientList {
             nextNode = node;
         }
 
+        public void add(Patient patient) {
+            this.patient = patient;
+        }
+
         public Patient getPatient() {
             return patient;
         }
