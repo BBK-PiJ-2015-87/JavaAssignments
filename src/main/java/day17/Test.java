@@ -55,6 +55,8 @@ public class Test {
 
             t1.start();
             t2.start();
+            t3.start();
+            t4.start();
 
             System.out.println(test.count);
         }
