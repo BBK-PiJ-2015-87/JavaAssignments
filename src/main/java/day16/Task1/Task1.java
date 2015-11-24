@@ -27,6 +27,7 @@ public class Task1 {
         } catch (IOException ex) {
             System.out.println("There is io exception");
         }finally {
+            writer.flush();
             try {
                 if (reader != null && writer != null) {
                     reader.close();
