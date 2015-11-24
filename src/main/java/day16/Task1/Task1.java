@@ -7,7 +7,7 @@ import java.io.*;
  */
 public class Task1 {
     public static void main(String[] args) {
-        String location = "./resources/fileToRead.txt";
+        String location = "src/main/resources/fileToRead.txt";
         File file = new File(location);
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
