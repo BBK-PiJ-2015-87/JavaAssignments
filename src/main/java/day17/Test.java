@@ -1,65 +1,58 @@
 package day17;
 
+import java.util.Objects;
+
 /**
  * Created by vladimirsivanovs on 24/11/2015.
  */
 public class Test {
     public int count = 1;
+    private final Object lock = new Object();
+
+//    public void increment() {
+//        synchronized (lock) {
+//            count++;
+//        }
+//    }
+//
+//    public void decrement() {
+//        synchronized (lock) {
+//            count--;
+//        }
+//    }
 
     public void increment() {
-        count--;
+        count++;
     }
 
     public void decrement() {
         count--;
     }
 
-    public static void main(String[] args) {
-        for (int a = 0; a < 10; a++) {
-            final Test test = new Test();
-            Thread t1 = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    for (int i = 0; i < 100; i++) {
-                        test.increment();
-                    }
-                }
-            });
+    public static void main(String[] args) throws InterruptedException {
 
-            Thread t2 = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    for (int i = 0; i < 100; i++) {
-                        test.decrement();
-                    }
-                }
-            });
+        final Test test = new Test();
 
-            Thread t3 = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    for (int i = 0; i < 100; i++) {
-                        test.increment();
-                    }
-                }
-            });
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                test.increment();
+                System.out.println("thread 1");
+            }
+        });
 
-            Thread t4 = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    for (int i = 0; i < 100; i++) {
-                        test.decrement();
-                    }
-                }
-            });
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                test.decrement();
+                System.out.println("thread 2");
+            }
+        });
 
-            t1.start();
-            t2.start();
-            t3.start();
-            t4.start();
-
-            System.out.println(test.count);
-        }
+        t1.start();
+        t2.start();
+        Thread.sleep(1000);
+        System.out.println(test.count);
     }
 }
 
