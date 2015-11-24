@@ -7,19 +7,34 @@ import java.io.*;
  */
 public class Task1 {
     public static void main(String[] args) {
-        String location = "src/main/resources/fileToRead.txt";
-        File file = new File(location);
+        String source = "src/main/resources/fileToRead.txt";
+        String dest = "src/main/resources/fileToWrite.txt";
+        File src = new File(source);
+        File dst = new File(dest);
+        BufferedReader reader = null;
+        PrintWriter writer = null;
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
+            reader = new BufferedReader(new FileReader(src));
+            writer = new PrintWriter(dst);
             String line;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line.toUpperCase());
+                writer.write(line.toUpperCase());
+                writer.write("\n");
             }
         } catch (FileNotFoundException ex) {
             System.out.println("File not found");
         } catch (IOException ex) {
             System.out.println("There is io exception");
+        }finally {
+            try {
+                if (reader != null && writer != null) {
+                    reader.close();
+                    writer.close();
+                }
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
-
     }
 }
