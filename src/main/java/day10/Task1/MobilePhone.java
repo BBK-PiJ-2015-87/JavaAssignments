@@ -13,7 +13,7 @@ public class MobilePhone extends OldPhone {
         System.out.println("Alarm is set to: " + time);
     }
 
-    public void playGame(String name) {
+    private void playGame(String name) {
         System.out.println("Starting game " + name);
     }
 

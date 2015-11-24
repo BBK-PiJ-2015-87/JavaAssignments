@@ -6,7 +6,7 @@ public class PhoneLauncher {
         launcher.launch();
     }
     public void launch() {
-        SmartPhone s3 = new SmartPhone("GALAXY S3");
+        SmartPhone s3 = new RestrictedSmartPhone("GALAXY S3");
         s3.browseWeb("www.google.com");
         s3.findPosition();
         s3.call("00751022222");
