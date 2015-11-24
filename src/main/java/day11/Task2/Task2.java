@@ -1,6 +1,7 @@
 package day11.Task2;
 
 import day10.Task1.MobilePhone;
+import day10.Task1.Phone;
 import day10.Task1.SmartPhone;
 
 public class Task2 {
@@ -18,5 +19,11 @@ public class Task2 {
         SmartPhone nokiaSmart = (SmartPhone)nokia;
         nokiaSmart.browseWeb("www.nokia.com");
         nokiaSmart.call("000012222");
+
+        testPhone(s3);
+    }
+
+    public static void testPhone(Phone phone) {
+        phone.call("00012212");
     }
 }
