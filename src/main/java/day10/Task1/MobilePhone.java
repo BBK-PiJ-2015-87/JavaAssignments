@@ -5,6 +5,10 @@ package day10.Task1;
  */
 public class MobilePhone extends OldPhone {
 
+    public MobilePhone(String brand) {
+        super(brand);
+    }
+
     public void ringAlarm(String time) {
         System.out.println("Alarm is set to: " + time);
     }
